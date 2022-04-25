@@ -2,11 +2,20 @@ import React from "react";
 
 // har doim yaratadigan componentamiz file nomi bn bir hil bo'lishi kk
 class SearchBar extends React.Component {
-  state = { kalitSoz: "" };
+  state = { kalitSoz: null };
+  // constructor(props) {
+  //   super(props);
+  //   this.imputdanMalumotniOl = this.imputdanMalumotniOl.bind(this);
+  // }
 
-  imputdanMalumotniOl(event) {
+  // 1.arrrow function
+  // 2.bind
+  // 3.bitta bola element ga tenglab ishlatamiz
+
+  imputdanMalumotniOl = (event) => {
     console.log(event.target.value);
-  }
+    this.setState({ kalitSoz: event.target.value });
+  };
 
   onFormSubmit(e) {
     e.preventDefault();
